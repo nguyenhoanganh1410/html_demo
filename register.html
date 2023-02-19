@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="./register_form.css">
+  <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <header class="bg-header">
+        <div class="row" style="display: flex; align-items: center;">
+            <div class="col-2" style="text-align: end;">
+                <a class="text-white header-logo" href="#">Fotobook</a>
+            </div>
+            <div class="col-8" > <input placeholder="Search photo / albums" type="text" class="form-control w-50 div_reponsive" id="search">
+            </div>
+            <div class="col-2"><a class="text-white header-login" href="#"> Login</a></div>
+        </div>  
+    </header>
+<div class="container">
+
+  <div class="row d-flex justify-content-center block-register">
+        <div class="col-sm-10 col-md-8 col-lg-5 block-register-div">
+            <h1 class="text-center login-title">Fotobook Signup</h1>
+            <div class="account-wall">
+                <form id="form" method="POST" action="/user/signup" class="form-signin">
+                    <div class="form-group">
+                        <label for="usr">First Name:</label>
+                        <span id="erro_firstname" style="color: red;">
+                          **Maximum 25 characters
+                        </span>
+                        <input type="text" class="form-control" placeholder="First name" id="firstname" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="usr">Last Name:</label>
+                        <span id="erro_lastname" style="color: red;">
+                          **Maximum 25 characters
+                        </span>
+                        <input type="text" class="form-control" id="lastname" required placeholder="Last name">
+                      </div>
+                      <div class="form-group">
+                        <label for="usr">Email:</label>
+                        <span id="erro_email" style="color: red;">
+                          **Maximum 265 characters
+                        </span>
+                        <input type="text" id="email" class="form-control" placeholder="Email" required autofocus>
+                      </div>
+                      <div class="form-group">
+                        <label for="usr">New Password:</label>
+                        <span id="erro_password" style="color: red;">
+                          **Maximum 64 characters
+                        </span>
+                        <input id="password" type="password" class="form-control mb-4" placeholder="Password" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="usr">Password Comfirmation:</label>
+                        <span id="erro_password_comfi" style="color: red;">
+                          **Maximum 64 characters
+                        </span>
+                        <input id="password_comfi" type="password" class="form-control mb-4" placeholder="Password" required>
+                      </div>
+              
+               
+                     <button id="submitBtn" class="btn mt-2 btn-primary btn-block w-50" style="position: relative; left: 50%; transform: translateX(-50%); background-color:#3c5999" type="submit">
+                    Signup</button>
+                 
+                </form>
+            </div>
+        </div>
+    </div> 
+</div>
+
+</body>
+<script>
+  // Document is ready
+$(document).ready(function (e) {
+  e.preven
+  // Validate first name
+  $("#erro_firstname").hide();
+  let usernameError = true;
+  $("#firstname").keyup(function () {
+    validateFirstname();
+  });
+
+  function validateFirstname() {
+    let usernameValue = $("#firstname").val();
+    if (usernameValue.length > 25) {
+      $("#erro_firstname").show();
+      usernameError = false;
+      return false;
+    } else {
+       $("#erro_firstname").hide();
+       return true;
+    }
+  }
+
+  // Validate last name
+  $("#erro_lastname").hide();
+  let lastNameErro = true;
+  $("#lastname").keyup(function () {
+    validateLastname();
+  });
+
+  function validateLastname() {
+    let usernameValue = $("#lastname").val();
+    if (usernameValue.length > 25) {
+      $("#erro_lastname").show();
+      usernameError = false;
+      return false;
+    } else {
+       $("#erro_lastname").hide();
+       return true;
+    }
+  }
+
+  // Validate Email
+  $("#erro_email").hide();
+  let emailErro = false;
+  const email = document.getElementById("email");
+  email.addEventListener("blur", () => {
+    let regex = /^([_\-\.0-9a-zA-Z]+)@([_\-\.0-9a-zA-Z]+)\.([a-zA-Z]){2,7}$/;
+    let s = email.value;
+    if(s.length > 256){
+      $("#erro_email").show();
+      emailErro = false;
+      return false;
+    }
+    else if (!regex.test(s) && s.length>0) {
+      
+      $("#erro_email").html(
+        "**Email is invalid"
+      );
+      $("#erro_email").show();
+
+      emailErro = false;
+      return false;
+    } else {
+      $("#erro_email").hide();
+      emailErro = true;
+      return true
+    }
+  });
+
+  // Validate Password
+  $("#erro_password").hide();
+  $("#password").keyup(function () {
+    validatePassword();
+  });
+  function validatePassword() {
+    let passwordValue = $("#password").val();
+    if (passwordValue.length > 64) {
+     $("#erro_password").show();
+     return false;
+    } else {
+     $("#erro_password").hide();
+     return true;
+    }
+  }
+
+  // Validate Confirm Password
+  $("#erro_password_comfi").hide();
+  $("#password_comfi").blur(function () {
+    validateConfirmPassword();
+
+  });
+  function validateConfirmPassword() {
+    let confirmPasswordValue = $("#password_comfi").val();
+    let passwordValue = $("#password").val();
+    if (passwordValue != confirmPasswordValue) {
+      $("#erro_password_comfi").show();
+      $("#erro_password_comfi").html("**Password didn't Match");
+      
+      return false;
+    } else {
+       $("#erro_password_comfi").hide();
+       return true;
+    }
+  }
+
+  // Submit button
+  $("#submitBtn").click(function () {
+   
+      if(validateConfirmPassword() && validateFirstname() 
+        && validateLastname() && validatePassword() && emailErro
+      ){
+        return true;
+      }
+      return false
+   
+  });
+ });
+
+</script>
+</html>
