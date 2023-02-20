@@ -121,6 +121,34 @@
                   </div>
                 </div>
               </div>
+              <div class="row mt-4">
+                <div class="col-lg-6">
+                  <div class="custom-file mt-2 block-file">
+                    <img
+                      id="imgPreview"
+                      class="image-file-input"
+                      style="position: relative; z-index: 0"
+                      for="customFile"
+                    />
+                    <input
+                      type="file"
+                      class="custom-file-input"
+                      id="customFile"
+                      name="filename"
+                      style="
+                        height: 100%;
+                        position: absolute;
+                        z-index: 1;
+                        top: 0;
+                        left: 0;
+                      "
+                    />
+                    <span for="customFile" class="span-plussicon">
+                      <i class="fa fa-plus" aria-hidden="true"></i
+                    ></span>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <div class="col-lg-6">
@@ -134,9 +162,9 @@
                 ></textarea>
               </div>
             </div>
-            <div class="col-lg-12" style="margin-left: 15px">
+            <div class="col-lg-12 mt-4" style="margin-left: 15px">
               <div class="col-lg2">
-                <button type="button" class="btn btn-success">Success</button>
+                <button type="button" class="btn btn-success">Save</button>
               </div>
             </div>
           </form>
@@ -193,5 +221,23 @@
         </div>
       </div>
     </div>
+    <script>
+      $(document).ready(() => {
+        $("#customFile").change(function () {
+          const file = this.files[0];
+          console.log(file);
+          if (file) {
+            let reader = new FileReader();
+            $(".span-plussicon").hide();
+            reader.onload = function (event) {
+              console.log(event.target.result);
+              $("#imgPreview").attr("src", event.target.result);
+            };
+            reader.readAsDataURL(file);
+            console.log(reader);
+          }
+        });
+      });
+    </script>
   </body>
 </html>

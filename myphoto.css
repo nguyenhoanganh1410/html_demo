@@ -47,3 +47,26 @@
   background-color: #f8f8f8;
   padding: 2rem 0;
 }
+
+/* css for photoadd */
+.block-file {
+  width: 100%;
+  height: 250px;
+  border: 1px dotted gray;
+  position: relative;
+}
+
+.block-file img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.span-plussicon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2.5rem;
+  color: #93b5c6;
+}
