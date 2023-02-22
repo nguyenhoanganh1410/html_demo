@@ -6,9 +6,19 @@
   opacity: 0.6;
   color: white;
   padding: 4px;
+  align-items: center;
 }
 .card_text p {
-  text-transform: capitalize;
+  font-size: 13px;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: white;
+  padding: 0 4px;
+}
+.card_text p::first-letter {
+  text-transform: uppercase;
 }
 .card_text span {
   font-weight: bold;
