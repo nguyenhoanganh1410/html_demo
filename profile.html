@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="./index.css" />
     <link rel="stylesheet" href="./myphoto.css" />
     <link rel="stylesheet" href="./feeds.css" />
+    <link rel="stylesheet" href="./profile.css" />
   </head>
   <body>
     <header class="bg-header">
@@ -91,52 +92,49 @@
       <div class="col-lg-10 col-xl-8">
         <div class="block-content d-flex justify-content-between flex-column">
           <div class="block-content-main">
-            <div
-              class="d-flex justify-content-end"
-              style="margin-bottom: 30px; margin-right: 15px"
-            >
-              <a href="photoadd.html" type="button" class="btn btn-success"
-                >Add New Photo</a
-              >
+            <div class="block-content-top">
+              <h6>Edit User Profile</h6>
             </div>
-            <div class="row">
-              <div class="col-sm-6 col-md-4 col-lg-4 col-xl-3 mb-4">
-                <div class="card-custom">
-                  <a href="/me/photo/edit">
-                    <div class="card_text d-flex justify-content-between">
-                      <p class="text-content">
-                        s nam dias harum, animiendis nam dias harum,
-                        animiendis...
-                      </p>
-                      <span
-                        ><i class="fa fa-pencil-square-o" aria-hidden="true"></i
-                      ></span>
-                    </div>
-                    <div class="block-content-bottom">
-                      <div class="my-albums">
-                        <img
-                          class="card-img-top img-thumbnail"
-                          src="./photo.png"
-                          alt="Card image"
-                        />
-                        <img
-                          class="card-img-top img-thumbnail"
-                          src="./photo.png"
-                          alt="Card image"
-                        />
-                        <img
-                          class="card-img-top img-thumbnail"
-                          src="./photo.png"
-                          alt="Card image"
-                        />
-                      </div>
-                    </div>
-                    <span class="lock-css"
-                      ><i class="fa fa-lock" aria-hidden="true"></i
+            <div class="block-content-bottom d-flex justify-content-center">
+              <form action="" style="width: 50%;">
+                <div class="form-top">
+                  <div class="custom-file block-file">
+                    <img
+                      id="imgPreview"
+                      class="image-file-input"
+                      style="position: relative; z-index: 0"
+                      for="customFile"
+                    />
+                    <input
+                      type="file"
+                      class="custom-file-input"
+                      id="customFile"
+                      name="filename"
+                      style="
+                        height: 100%;
+                        position: absolute;
+                        z-index: 1;
+                        top: 0;
+                        left: 0;
+                      "
+                    />
+                    <span for="customFile" class="span-plussicon">
+                      <i class="fa fa-plus" aria-hidden="true"></i
                     ></span>
-                  </a>
+                  </div>
+
+                  <div class="d-flex">
+                    <label for="email" class="mr-sm-2">Email address:</label>
+                    <input
+                      type="email"
+                      class="form-control mb-2 mr-sm-2"
+                      placeholder="Enter email"
+                      id="email"
+                    />
+                  </div>
                 </div>
-              </div>
+                <div class="form-bottom"></div>
+              </form>
             </div>
           </div>
 
