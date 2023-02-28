@@ -40,12 +40,7 @@
             class="d-flex block-user"
             style="align-items: center; cursor: pointer"
           >
-            <img
-              src="https://www.tutorialspoint.com/bootstrap/images/64.jpg"
-              class="rounded-circle"
-              alt="Rounded Image"
-              style="width: 30px; height: 30px"
-            />
+           <span class="block-imageUser">a</span>
             <span
               class="ml-2"
               style="
@@ -92,62 +87,227 @@
       <div class="col-lg-10 col-xl-8">
         <div class="block-content d-flex justify-content-between flex-column">
           <div class="block-content-main">
-            <div class="block-content-top">
-              <h6>Edit User Profile</h6>
+            <div class="block-content-top" style="margin-bottom: 3rem;">
+              <h4>Edit User Profile</h4>
             </div>
-            <div class="block-content-bottom d-flex justify-content-center">
-              <form action="" style="width: 50%;">
+            <div class="block-content-bottom">
+              <form action="">
                 <div class="form-top">
-                  <div class="custom-file block-file">
-                    <img
-                      id="imgPreview"
-                      class="image-file-input"
-                      style="position: relative; z-index: 0"
-                      for="customFile"
-                    />
-                    <input
-                      type="file"
-                      class="custom-file-input"
-                      id="customFile"
-                      name="filename"
-                      style="
-                        height: 100%;
-                        position: absolute;
-                        z-index: 1;
-                        top: 0;
-                        left: 0;
-                      "
-                    />
-                    <span for="customFile" class="span-plussicon">
-                      <i class="fa fa-plus" aria-hidden="true"></i
-                    ></span>
+
+                  <div class="row">
+                    <div class="col-5"></div>
+                    <div class="col-7">
+                      <div class="block-input-upload">
+
+                        <img
+                          id="imgPreview"
+                         
+                          for="customFile"
+                          src="/photo.png"
+                        />
+                        <input
+                          type="file"
+                          accept="image/png, image/jpeg, image/gif"
+                          id="customFile"
+                          name="filename"
+                         
+                        />
+                        <button class="btn btn-primary btn-upload-custom" type="button">CHANGE</button>
+                      </div>
+                    </div>
+
+             
+                  </div>
+                  
+                  <div class="row mt-2">
+                    <div
+                      class="col-5 d-flex justify-content-end align-items-center"
+                    >
+                      
+                    </div>
+                    <div class="col-7 mb-2">
+                      <h6 class="form-top-title">Basic Information</h6>
+                     
+                    </div>
                   </div>
 
-                  <div class="d-flex">
-                    <label for="email" class="mr-sm-2">Email address:</label>
-                    <input
-                      type="email"
-                      class="form-control mb-2 mr-sm-2"
-                      placeholder="Enter email"
-                      id="email"
-                    />
+                  <div class="row mt-2">
+                    <div
+                      class="col-5 d-flex justify-content-end align-items-center"
+                    >
+                      <label
+                        for="firstname"
+                        class="mr-sm-2 text-right label-custom"
+                        >First Name:</label
+                      >
+                      
+                    </div>
+                    <div class="col-7 mb-2">
+                      <span id="erro_firstname" style="color: red">
+                        **Maximum 25 characters
+                      </span>
+                      <input
+                        type="text"
+                        class="form-control mb-2 mr-sm-2 input-custom"
+                        placeholder="Enter firstname"
+                        id="firstname"
+                        required
+                      />
+                    </div>
                   </div>
+
+                  <div class="row mt-2">
+                    <div
+                      class="col-5 d-flex justify-content-end align-items-center"
+                    >
+                      <label
+                        for="lastName"
+                        class="mr-sm-2 text-right label-custom"
+                        >Last Name:</label
+                      >
+                    </div>
+                    <div class="col-7 mb-2">
+                      <span id="erro_lastname" style="color: red">
+                        **Maximum 25 characters
+                      </span>
+                      <input
+                        type="text"
+                        class="form-control mb-2 mr-sm-2 input-custom"
+                        placeholder="Enter last name"
+                        id="lastName"
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  <div class="row mt-2">
+                    <div
+                      class="col-5 d-flex justify-content-end align-items-center"
+                    >
+                      <label for="email" class="mr-sm-2 text-right label-custom"
+                        >Email Address:</label
+                      >
+                    </div>
+                    <div class="col-7">
+                      <input
+                        type="email"
+                        class="form-control mb-2 mr-sm-2 input-custom"
+                        placeholder="Enter email"
+                        id="email"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="row mt-4">
+                    <div
+                      class="col-5 d-flex justify-content-end align-items-center"
+                    >
+                     
+                    </div>
+                    <div class="col-7 mt-3">
+                      <button type="submit" id="submitBtn" class="btn btn-success">Save</button>
+                  </div>
+
+                  
                 </div>
-                <div class="form-bottom"></div>
+              </form>
+              <form action="" style="margin-top: 3.5rem;">
+                <div class="form-top">
+    
+                  
+                  <div class="row mt-2">
+                    <div
+                      class="col-5 d-flex justify-content-end align-items-center"
+                    >
+                      
+                    </div>
+                    <div class="col-7 mb-2">
+                      <h6 class="form-top-title">Password</h6>
+                     
+                    </div>
+                  </div>
+
+                  <div class="row mt-2">
+                    <div
+                      class="col-5 d-flex justify-content-end align-items-center"
+                    >
+                      <label
+                        for="currentPass"
+                        class="mr-sm-2 text-right label-custom"
+                        >Current Password:</label
+                      >
+                    </div>
+                    <div class="col-7 mb-2">
+                      
+                      <input
+                        type="text"
+                        class="form-control mb-2 mr-sm-2 input-custom"
+                        placeholder="Enter Current password"
+                        id="currentPass"
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  <div class="row mt-2">
+                    <div
+                      class="col-5 d-flex justify-content-end align-items-center"
+                    >
+                      <label
+                        for="newPassword"
+                        class="mr-sm-2 text-right label-custom"
+                        >New Password:</label
+                      >
+                    </div>
+                    <div class="col-7 mb-2">
+                      <span id="erro_password" style="color: red">
+                        **Maximum 64 characters
+                      </span>
+                      <input
+                        type="password"
+                        class="form-control mb-2 mr-sm-2 input-custom"
+                        placeholder="Enter new password"
+                        id="newPassword"
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  <div class="row mt-2">
+                    <div
+                      class="col-5 d-flex justify-content-end align-items-center"
+                    >
+                      <label for="passConfirm" class="mr-sm-2 text-right label-custom"
+                        >Password Confimation:</label
+                      >
+                    </div>
+                    <div class="col-7 mb-2">
+                      <span id="erro_password_comfi" style="color: red">
+                        **Maximum 64 characters
+                      </span>
+                      <input
+                        type="password"
+                        class="form-control mb-2 mr-sm-2 input-custom"
+                        placeholder="Enter password confirmation""
+                        id="passConfirm"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="row mt-4">
+                    <div
+                      class="col-5 d-flex justify-content-end align-items-center"
+                    >
+                     
+                    </div>
+                    <div class="col-7 mt-3">
+                      <button type="submit" id="submitChangePass" class="btn btn-success">Save</button>
+                  </div>
+
+                  
+                </div>
               </form>
             </div>
-          </div>
-
-          <div class="custom-panigation">
-            <ul class="pagination">
-              <li class="page-item disabled">
-                <a class="page-link" href="#">Previous</a>
-              </li>
-              <li class="page-item"><a class="page-link" href="#">1</a></li>
-              <li class="page-item"><a class="page-link" href="#">2</a></li>
-              <li class="page-item"><a class="page-link" href="#">3</a></li>
-              <li class="page-item"><a class="page-link" href="#">Next</a></li>
-            </ul>
           </div>
         </div>
       </div>
@@ -181,26 +341,121 @@
         </div>
       </div>
     </div>
-    <!-- The Modal -->
-    <div class="modal fade" id="modelImage">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <!-- Modal body -->
-          <div class="modal-body">
-            <div class="body-block">
-              <p class="block-header">Nam tempor posuere faucibus</p>
-              <div class="block-image">
-                <img src="./photo.png" alt="image" />
-              </div>
-              <p class="block-desc">
-                Aliquam dictum nec massa ac consequat. Etiam dignissim tincidunt
-                tellus sed vestibulum. Sed vitae vestibulum purus. Curabitur
-                malesuada libero in nibh pretium, sed malesuada nisi feugiat.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   </body>
+  <script>
+    $(document).ready(() => {
+        $("#customFile").change(function () {
+          const file = this.files[0];
+
+          if (file) {
+            let reader = new FileReader();
+            $(".span-plussicon").hide();
+            reader.onload = function (event) {
+              console.log(event.target.result);
+              $("#imgPreview").attr("src", event.target.result);
+            };
+            reader.readAsDataURL(file);
+            console.log(reader);
+          }
+         });
+
+    });
+
+     // Validate first name
+     $("#erro_firstname").hide();
+          let usernameError = true;
+          $("#firstname").keyup(function () {
+            validateFirstname();
+          });
+
+          function validateFirstname() {
+            let usernameValue = $("#firstname").val();
+            if (usernameValue.length > 25) {
+              $("#erro_firstname").show();
+              usernameError = false;
+              return false;
+            } else {
+              $("#erro_firstname").hide();
+              return true;
+            }
+          }
+
+          // Validate last name
+          $("#erro_lastname").hide();
+          let lastNameErro = true;
+          $("#lastname").keyup(function () {
+            validateLastname();
+          });
+
+          function validateLastname() {
+            let usernameValue = $("#lastname").val();
+            if (usernameValue.length > 25) {
+              $("#erro_lastname").show();
+              usernameError = false;
+              return false;
+            } else {
+              $("#erro_lastname").hide();
+              return true;
+            }
+          }
+
+     // Validate Password
+     $("#erro_password").hide();
+      $("#newPassword").keyup(function () {
+        validatePassword();
+      });
+      function validatePassword() {
+        let passwordValue = $("#newPassword").val();
+        if (passwordValue.length > 64) {
+          $("#erro_password").show();
+          return false;
+        } else {
+          $("#erro_password").hide();
+          return true;
+        }
+      }
+
+      // Validate Confirm Password
+      $("#erro_password_comfi").hide();
+      $("#passConfirm").blur(function () {
+        validateConfirmPassword();
+      });
+      function validateConfirmPassword() {
+        let confirmPasswordValue = $("#passConfirm").val();
+        let passwordValue = $("#password").val();
+        if (passwordValue != confirmPasswordValue) {
+          $("#erro_password_comfi").show();
+          $("#erro_password_comfi").html("**Password didn't Match");
+
+          return false;
+        } else {
+          $("#erro_password_comfi").hide();
+          return true;
+        }
+      }
+      // Submit button
+      $("#submitChangePass").click(function () {
+        if (
+          validateConfirmPassword() &&         
+          validatePassword() 
+  
+        ) {
+          return true;
+        }
+        return false;
+      });
+       // Submit button
+       $("#submitBtn").click(function () {
+        if (
+         
+          validateFirstname() &&
+          validateLastname() 
+   
+        ) {
+          return true;
+        }
+        return false;
+      });
+    
+  </script>
 </html>
